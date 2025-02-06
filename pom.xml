@@ -21,7 +21,7 @@
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-bundle-plugin.version>5.1.9</maven-bundle-plugin.version>
         <!-- Dependency versions controlled via properties -->
-        <!-- Define properties as [artifactId].version -->        
+        <!-- Define properties as [artifactId].version -->
         <!-- External bundle version declarations -->
         <guavaVersion>32.1.1-jre</guavaVersion>
         <failureaccessVersion>1.0.1</failureaccessVersion>
@@ -36,7 +36,7 @@
         <felix-scr-version>2.2.6</felix-scr-version>
         <felix-http-version>5.1.2</felix-http-version>
         <felix-configadmin-version>1.9.26</felix-configadmin-version>
-        <felix-eventadmin-version>1.6.4</felix-eventadmin-version>   
+        <felix-eventadmin-version>1.6.4</felix-eventadmin-version>
         <felix-metatype-version>1.2.4</felix-metatype-version>
         <felix-webconsole-version>4.8.8</felix-webconsole-version>
         <felix-bundlerepository-version>2.0.10</felix-bundlerepository-version>
@@ -86,6 +86,8 @@
         <commonsFileUpload>1.5</commonsFileUpload>
         <lombokVersion>1.18.30</lombokVersion>
         <httpclient.version>4.5.13</httpclient.version>
+        <jFreeVersion>3.4</jFreeVersion>
+        <xmlBind>2.3.1</xmlBind>
     </properties>
     <repositories>
         <repository>
@@ -128,7 +130,7 @@
         <module>core/das</module>
         <module>core/ucsc-rest-api-service</module>
         <module>core/ensembl-rest-api-service</module>
-       <!--<module>core/das2</module>-->
+        <!--<module>core/das2</module>-->
         <module>core/frameManager</module>
         <module>core/synonym-lookup</module>
         <module>core/igb-javafx-util</module>
@@ -155,9 +157,9 @@
         <module>plugins/Thresholding</module>
         <module>plugins/Update</module>
         <module>plugins/plugin-manager</module>
-        <module>plugins/PairedEndDataPreprocessor</module> 
+        <module>plugins/PairedEndDataPreprocessor</module>
         <module>plugins/image-exporter</module>
-        <module>plugins/session-manager</module>               
+        <module>plugins/session-manager</module>
         <module>plugins/Keybinding-registry</module>
         <module>plugins/cache</module>
         <module>plugins/cache-api</module>
@@ -177,9 +179,9 @@
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <modules>               
+            <modules>
                 <module>main</module>
-            </modules>            
+            </modules>
         </profile>
         <profile>
             <id>linux</id>
@@ -247,8 +249,8 @@
                 <install4j.macKeystorePassword>${MAC_KEYSTORE_PASSWORD}</install4j.macKeystorePassword>
             </properties>
             <modules>
-                <module>main</module>  
-            </modules>         
+                <module>main</module>
+            </modules>
         </profile>
         <profile>
             <id>release-snapshots</id>
@@ -267,14 +269,14 @@
             <id>release-to-nexus.bioviz.org</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
-            </activation>            
+            </activation>
             <distributionManagement>
                 <repository>
                     <id>maven-releases</id>
                     <name>maven-releases</name>
                     <url>https://nexus.bioviz.org/repository/maven-releases</url>
                 </repository>
-            </distributionManagement> 
+            </distributionManagement>
         </profile>
     </profiles>
     <dependencyManagement>
@@ -472,7 +474,7 @@
                 <artifactId>ncbiBlast</artifactId>
                 <version>${project.parent.version}</version>
                 <scope>provided</scope>
-            </dependency>           
+            </dependency>
             <dependency>
                 <groupId>org.lorainelab.igb</groupId>
                 <artifactId>propertyView</artifactId>
@@ -539,7 +541,7 @@
                 <version>${project.parent.version}</version>
                 <scope>provided</scope>
             </dependency>
-            <dependency> 
+            <dependency>
                 <groupId>org.lorainelab.igb</groupId>
                 <artifactId>igb-genoviz-extensions</artifactId>
                 <version>${project.parent.version}</version>
@@ -621,7 +623,7 @@
                 <scope>provided</scope>
             </dependency>
             <!--End of plugin module dependencies-->
-            
+
             <!--Start of logging dependencies-->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -717,7 +719,6 @@
             <!--End of additional provided dependencies-->
 
 
-
             <dependency>
                 <groupId>furbelow</groupId>
                 <artifactId>furbelow</artifactId>
@@ -728,19 +729,19 @@
                 <artifactId>jackson-mapper-lgpl</artifactId>
                 <version>${jacksonMapperVersion}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.fileinstall</artifactId>
                 <version>${felix-file-install-version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.scr</artifactId>
                 <version>${felix-scr-version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.http.base</artifactId>
@@ -832,6 +833,16 @@
                 <groupId>org.freehep</groupId>
                 <artifactId>freehep-graphicsio-svg</artifactId>
                 <version>${freehepGraphicSvgVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jfree</groupId>
+                <artifactId>jfreesvg</artifactId>
+                <version>${jFreeVersion}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>${xmlBind}</version>
             </dependency>
             <dependency>
                 <groupId>org.jdom</groupId>
